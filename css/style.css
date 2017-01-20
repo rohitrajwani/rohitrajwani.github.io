@@ -1,0 +1,122 @@
+html,body{
+    height: 100%;
+    background-color: #333;
+    overflow-y: hidden;
+}
+
+section.landing{
+    height: 100%;
+/*    background-color: #e51022;*/
+    background-image: url(../img/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0px -200px;
+    background-attachment: fixed;
+}
+
+section.landing .mask{
+    background-color: rgba(0, 0, 0, 0.89);
+    height: 100%;
+    position: relative;
+}
+
+section.landing .logo{
+    text-align: center;
+    position: absolute;
+    top: 10px;
+    color: white;
+}
+
+section.landing .logo span{
+    position: relative;
+    top: -8px;
+    text-align: center;
+    color: white;
+    font-weight: 100;
+    font-family: "Raleway",sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+section.landing .logo img{
+    height: 45px;
+    display: block;
+    margin: auto;
+}
+
+section.landing h3{
+    position: absolute;
+    top: calc(50% - 60px);
+    text-align: center;
+    color: whitesmoke;
+    font-size: 1.75em;
+    letter-spacing: 10px;
+    word-spacing: 6px;
+}
+
+section.landing h4{
+    position: absolute;
+    top: calc(50% + 0px);
+    margin: 0px;
+    text-align: center;
+    color: whitesmoke;
+    font-weight: 200;
+    font-family: "Raleway",sans-serif;
+    font-size: 3em;
+}
+
+section.landing h5{
+    text-align: center;
+    position: absolute;
+    top: calc(50% + 180px);
+    color: whitesmoke;
+    font-family: "Josefin Sans",sans-serif;
+    font-size: 32px;
+}
+
+section.landing h1{
+    text-align: center;
+    position: absolute;
+    bottom: -20px;
+    color: white;
+    font-weight: 100;
+    font-family: "Josefin Sans",sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 60px;
+}
+
+section.landing h6{
+    text-align: center;
+    color: white;
+    font-weight: 100;
+    font-family: "Raleway",sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    position: absolute;
+    top: calc(50% - 30px);
+    font-size: 14px;
+}
+
+section.landing h6.projects{
+    left: -100px !important;
+    transform: rotate(90deg);
+}
+
+section.landing h6.skills{
+    right: -100px !important;
+    transform: rotate(270deg);
+}
+
+section.landing h6.education{
+    top: 10px;
+    left: 0px !important;
+    text-align: left;
+    padding-left: 25px;
+}
+
+section.landing h6.experience{
+    top: 10px;
+    right: 0px !important;
+    text-align: right;
+    padding-right: 25px;
+}
