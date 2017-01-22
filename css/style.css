@@ -18,6 +18,7 @@ section.landing .mask{
     background-color: rgba(0, 0, 0, 0.89);
     height: 100%;
     position: relative;
+    transition: 500ms;
 }
 
 section.landing .logo{
@@ -27,15 +28,9 @@ section.landing .logo{
     color: white;
 }
 
-section.landing .logo span{
+section.landing .logo h6{
     position: relative;
     top: -8px;
-    text-align: center;
-    color: white;
-    font-weight: 100;
-    font-family: "Raleway",sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 5px;
 }
 
 section.landing .logo img{
@@ -44,7 +39,7 @@ section.landing .logo img{
     margin: auto;
 }
 
-section.landing h3{
+section.landing h3.intro{
     position: absolute;
     top: calc(50% - 60px);
     text-align: center;
@@ -54,7 +49,7 @@ section.landing h3{
     word-spacing: 6px;
 }
 
-section.landing h4{
+section.landing h4.intro{
     position: absolute;
     top: calc(50% + 0px);
     margin: 0px;
@@ -65,7 +60,7 @@ section.landing h4{
     font-size: 3em;
 }
 
-section.landing h5{
+section.landing h5.intro{
     text-align: center;
     position: absolute;
     top: calc(50% + 180px);
@@ -74,7 +69,7 @@ section.landing h5{
     font-size: 32px;
 }
 
-section.landing h1{
+section.landing h1.intro{
     text-align: center;
     position: absolute;
     bottom: -20px;
@@ -85,16 +80,19 @@ section.landing h1{
     letter-spacing: 60px;
 }
 
-section.landing h6{
+section.landing h6, section.landing .menu{
     text-align: center;
     color: white;
-    font-weight: 100;
+    font-weight: 800;
     font-family: "Raleway",sans-serif;
     text-transform: uppercase;
     letter-spacing: 5px;
     position: absolute;
     top: calc(50% - 30px);
     font-size: 14px;
+    transition: 400ms;
+    z-index: 999;
+    cursor: pointer;
 }
 
 section.landing h6.projects{
@@ -119,4 +117,44 @@ section.landing h6.experience{
     right: 0px !important;
     text-align: right;
     padding-right: 25px;
+}
+
+section.landing section h1.bg-header{
+    position: absolute;
+    top: -35px;
+    color: rgba(255,255,255,0.06);
+    text-transform: lowercase;
+    font-family: "Open Sans" ,sans-serif;
+    font-size: 10em;
+    letter-spacing: 20px;
+    font-weight: 800;
+    z-index: 1;
+}
+
+section.landing section h1.header{
+    position: absolute;
+    top: 70px;
+    color: rgba(255,255,255,0.85);
+    text-transform: capitalize;
+    font-family: "Josefin Sans" ,sans-serif;
+    font-size: 2.5em;
+    letter-spacing: 3px;
+    font-weight: 800;
+    z-index: 2;
+}
+
+section.landing section{
+    display: none;
+}
+
+section.about p.about-content{
+    position: absolute;
+    top: 180px;
+    color: rgba(255,255,255,0.85);
+    font-size: 22px;
+    line-height: 1.7;
+    letter-spacing: 1.5px;
+    word-spacing: 2px;
+    font-family: "Raleway" ,sans-serif;
+    font-weight: 500;
 }

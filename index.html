@@ -4,9 +4,9 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Raleway:300" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:800|Josefin+Sans|Raleway:300,500" rel="stylesheet">
 
-    <link href="font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<!--    <link href="font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">-->
     
     <link rel="shortcut icon" href="img/favicon.png">
     
@@ -19,25 +19,46 @@
 <body>
     
     <section class="landing row">
-        <div class="mask">
-            <div class="logo col s12"><img src="img/logo.png"><span>About</span></div>
-            <h3 class="col s12">Hii, I am....</h3>
-            <h4 class="col s12">Rohit Rajwani</h4>
-            <h5 class="col s12">A</h5>
-            <h1 class="col s12">Web Developer</h1>
-            <h6 class="projects col s2">Projects</h6>
-            <h6 class="skills col s2">Skills</h6>
-            <h6 class="education col s2">Education</h6>
-            <h6 class="experience col s2">Contact</h6>
+        <div class="mask" id="mask">
+            <div class="logo col s12"><img class="clogo" src="img/logo.png"><h6 class="menu" data-menu-name="about">About</h6></div>
+            <h6 class="menu projects col s2" data-menu-name="projects">Projects</h6>
+            <h6 class="menu skills col s2" data-menu-name="skills">Skills</h6>
+            <h6 class="menu education col" data-menu-name="education">Education</h6>
+            <h6 class="menu experience col" data-menu-name="contact">Contact</h6>
+            <h3 class="intro col s12">Hii, I am....</h3>
+            <h4 class="intro col s12">Rohit Rajwani</h4>
+            <h5 class="intro col s12">A</h5>
+            <h1 class="intro col s12">Web Developer</h1>
+            <section class="about" data-menu-name="about">
+                <h1 class="bg-header col s12">About</h1>
+                <h1 class="header col s12 m3 offset-m1">About</h1>
+                <p class="about-content col s12 m7 offset-m1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+            </section>
+            <section class="education" data-menu-name="education">
+                <h1 class="bg-header col s12">Education</h1>
+                <h1 class="header col s12 m3 offset-m1">Education</h1>
+            </section>
+            <section class="projects" data-menu-name="projects">
+                <h1 class="bg-header col s12">Projects</h1>
+                <h1 class="header col s12 m3 offset-m1">projects</h1>
+            </section>
+            <section class="skills" data-menu-name="skills">
+                <h1 class="bg-header col s12">Skills</h1>
+                <h1 class="header col s12 m3 offset-m1">Skills</h1>
+            </section>
+            <section class="contact" data-menu-name="contact">
+                <h1 class="bg-header col s12">Contact</h1>
+                <h1 class="header col s12 m3 offset-m1">Contact</h1>
+            </section>
         </div>
     </section>
     
     
     <script src="js/jquery-2.1.1.js"></script>
     <script src="js/materialize.min.js"></script>
-    <script src="js/wow.min.js"></script>
+<!--    <script src="js/wow.min.js"></script>-->
     <script>
-        new WOW().init();
+        
         $(document).ready(function(){
             // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
             $('.modal-trigger').leanModal();
@@ -57,6 +78,41 @@
                 }
             });
         });
+    </script>
+    <script>
+    
+        $(function(){
+            var click_count = 0;
+            $('.menu').on('click',function(){
+                var menu_item = $(this).attr('data-menu-name');
+                click_count += 1;
+                
+                var color_dark = 'rgba(0,0,0,0.8)';
+                var color_light = 'rgba(255,255,255,0.85)';
+                
+                $('.intro').fadeOut(500);
+                $('section.landing').find('div.mask section.active').fadeOut(100).removeClass('active');
+                $('section.landing section.'+menu_item).addClass('active').fadeIn(300);
+                
+                if( (click_count % 2) == 1){
+                    $('.mask').css('backgroundColor','rgba(0,0,0,1)').fadeIn(300);
+                    $('.menu').css('color','white').fadeIn(300);
+                    $('.clogo').attr('src','img/logo.png').fadeIn(300);
+                    $('section.landing section h1.bg-header').css('color','rgba(255,255,255,0.06)').fadeIn(300);
+                    $('section.landing section h1.header').css('color',color_light).fadeIn(300);
+                    $('section.about p.about-content').css('color',color_light).fadeIn(300);
+                }
+                else{
+                    $('.mask').css('backgroundColor','rgba(255,255,255,1)').fadeIn(300);
+                    $('.menu').css('color','rgba(0,0,0,0.8)').fadeIn(300);
+                    $('.clogo').attr('src','img/logo-dark.png').fadeIn(300);
+                    $('section.landing section h1.bg-header').css('color','rgba(0,0,0,0.2)').fadeIn(300);
+                    $('section.landing section h1.header').css('color',color_dark).fadeIn(300);
+                    $('section.about p.about-content').css('color',color_dark).fadeIn(300);
+                }
+            });
+        });
+    
     </script>
 </body>
 </html>
