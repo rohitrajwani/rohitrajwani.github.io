@@ -210,3 +210,70 @@ section.education .content h3.years{
     margin-top: 0px;
     font-family: "Raleway" ,sans-serif;
 }
+
+section.contact .content{
+    position: absolute;
+    top: 200px;
+}
+
+section.contact .content h3.message{
+    color: rgba(255,255,255,0.85);
+    font-size: 20px;
+    letter-spacing: 2px;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+section.contact .content h3 a{
+    color: rgba(255,255,255,0.85);
+    font-size: 0.9em;
+    letter-spacing: 2px;
+    font-weight: 300;
+    font-family: "Josefin Sans"
+}
+
+section.contact .content h3 a i.fa{
+    font-size: 30px;
+    line-height: 2;
+}
+
+section.contact .content h3.or{
+    color: rgba(255,255,255,0.85);
+    font-size: 24px;
+    text-align: center;
+    font-family: "Raleway",sans-serif;
+    font-weight: 500;
+    margin: 5px auto;
+}
+
+section.contact .social h3{
+    margin: auto;
+    line-height: 1.67;
+}
+
+section.projects .content{
+    position: absolute;
+    top: 160px;
+}
+
+section.projects .content h3.genre{
+    color: rgba(255,255,255,0.85);
+    font-size: 2em;
+    font-family: "Josefin Sans" ,sans-serif;
+    letter-spacing: 2px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+section.projects .content .project-container .project{
+    padding: 10px 0px;
+}
+
+section.projects .content .project-container .project h3.project-name{
+    color: rgba(255,255,255,0.85);
+    text-align: center;
+    font-size: 1.5em;
+    margin-top: 10px;
+    font-family: "Josefin Sans", sans-serif;
+    letter-spacing: 1px;
+}

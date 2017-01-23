@@ -6,7 +6,7 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:800|Josefin+Sans|Raleway:300,500" rel="stylesheet">
 
-<!--    <link href="font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">-->
+    <link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     
     <link rel="shortcut icon" href="img/logo-dark.png">
     
@@ -56,6 +56,46 @@
             <section class="projects" data-menu-name="projects">
                 <h1 class="bg-header col s12">Projects</h1>
                 <h1 class="header col s12 m3 offset-m1">projects</h1>
+                <div class="content col s12 m10 offset-m1">
+                    <h3 class="genre col s12 m3">Full Stack -</h3>
+                    <div class="project-container col s12 m12">
+                        <div class="project col s12 m3">
+                            <img src="img/projects/ccre.png" class="col s10 offset-s1">
+                            <h3 class="project-name col s10 offset-s1">CCRE</h3>
+                        </div>
+                        <div class="project col s12 m3">
+                            <img src="img/projects/fusion.png" class="col s10 offset-s1">
+                            <h3 class="project-name col s10 offset-s1">IIITDMJ Fusion</h3>
+                        </div>
+                        <div class="project col s12 m3">
+                            <img src="img/projects/crypto.png" class="col s10 offset-s1">
+                            <h3 class="project-name col s10 offset-s1">CryptoCracker</h3>
+                        </div>
+                        <div class="project col s12 m3">
+                            <img src="img/projects/blog.png" class="col s10 offset-s1">
+                            <h3 class="project-name col s10 offset-s1">Blog</h3>
+                        </div>
+                    </div>
+                    <h3 class="genre col s12 m3">Front End -</h3>
+                    <div class="project-container col s12 m12">
+                        <div class="project col s12 m3">
+                            <img src="img/projects/pclub.png" class="col s10 offset-s1">
+                            <h3 class="project-name col s10 offset-s1">Programming Club</h3>
+                        </div>
+                        <div class="project col s12 m3">
+                            <img src="img/projects/adc.png" class="col s10 offset-s1">
+                            <h3 class="project-name col s10 offset-s1">Aavartan</h3>
+                        </div>
+                        <div class="project col s12 m3">
+                            <img src="img/projects/jazbaat.png" class="col s10 offset-s1">
+                            <h3 class="project-name col s10 offset-s1">Jazbaat</h3>
+                        </div>
+                        <div class="project col s12 m3">
+                            <img src="img/projects/cs.png" class="col s10 offset-s1">
+                            <h3 class="project-name col s10 offset-s1">Counselling Services</h3>
+                        </div>
+                    </div>
+                </div>
             </section>
             <section class="skills" data-menu-name="skills">
                 <h1 class="bg-header col s12">Skills</h1>
@@ -64,6 +104,19 @@
             <section class="contact" data-menu-name="contact">
                 <h1 class="bg-header col s12">Contact</h1>
                 <h1 class="header col s12 m3 offset-m1">Contact</h1>
+                <div class="content col s12 m5 offset-m1">
+                    <h3 class="message col s12">You can reach me on-</h3>
+                    <h3 class="mail col s12"><a href=""><i class="fa fa-phone"></i> +91-7839500180</a></h3>
+                    <h3 class="or col s12 m8">OR</h3>
+                    <h3 class="mail col s12"><a href=""><i class="fa fa-envelope"></i> rohitrajwani@iiitdmj.ac.in</a></h3>
+                </div>
+                <div class="content social col s12 m5 offset-m7">
+                    <h3 class="message col s12">Follow on</h3>
+                    <h3 class="mail col s12"><a href=""><i class="fa fa-facebook-official"></i> /rohit.rajwani.9</a></h3>
+                    <h3 class="mail col s12"><a href=""><i class="fa fa-linkedin"></i> /rohitrajwani</a></h3>
+                    <h3 class="mail col s12"><a href=""><i class="fa fa-github"></i> /rohitrajwani</a></h3>
+                    
+                </div>
             </section>
         </div>
     </section>
@@ -71,28 +124,11 @@
     
     <script src="js/jquery-2.1.1.js"></script>
     <script src="js/materialize.min.js"></script>
-<!--    <script src="js/wow.min.js"></script>-->
     <script>
-        
         $(document).ready(function(){
             // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
             $('.modal-trigger').leanModal();
           });
-        /*Smooth Scroll*/
-        $(function() {
-            $('a[href*=#]:not([href=#])').click(function() {
-                if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-                    var target = $(this.hash);
-                    target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-                    if (target.length) {
-                        $('html,body').animate({
-                            scrollTop: target.offset().top
-                        }, 1000);
-                        return false;
-                    }
-                }
-            });
-        });
     </script>
     <script>
     
@@ -117,6 +153,9 @@
                     $('section.landing section h1.header').css('color',color_light).fadeIn(300);
                     $('section.about p.about-content').css('color',color_light).fadeIn(300);
                     $('section.education .content h3').css('color',color_light).fadeIn(300);
+                    $('section.contact .content h3').css('color',color_light).fadeIn(300);
+                    $('section.contact .content h3 a').css('color',color_light).fadeIn(300);
+                    $('section.projects .content h3').css('color',color_light).fadeIn(300);
                 }
                 else{
                     $('.mask').css('backgroundColor','rgba(255,255,255,1)').fadeIn(300);
@@ -126,6 +165,9 @@
                     $('section.landing section h1.header').css('color',color_dark).fadeIn(300);
                     $('section.about p.about-content').css('color',color_dark).fadeIn(300);
                     $('section.education .content h3').css('color',color_dark).fadeIn(300);
+                    $('section.contact .content h3').css('color',color_dark).fadeIn(300);
+                    $('section.contact .content h3 a').css('color',color_dark).fadeIn(300);
+                    $('section.projects .content h3').css('color',color_dark).fadeIn(300);
                 }
             });
         });
