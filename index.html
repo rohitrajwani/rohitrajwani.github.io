@@ -37,6 +37,21 @@
             <section class="education" data-menu-name="education">
                 <h1 class="bg-header col s12">Education</h1>
                 <h1 class="header col s12 m3 offset-m1">Education</h1>
+                <div class="content col s12 m10 offset-m1">
+                    <div class="col s12 m6">
+                        <h3 class="programme col s11">Bachelors of Technology</h3>
+                        <h3 class="discipline col s11">Computer Science and Engineering</h3>
+                        <h3 class="insti-name col s12 m11">Indian Institute of Information Technology, Design and Manufacturing</h3>
+                        <h3 class="place col s12 m11">Jabalpur<br>India</h3>
+                        <h3 class="years col s12 m11">August 2014 - Present</h3>
+                    </div>
+                    <div class="col s12 m6">
+                        <h3 class="programme-school col s11">Secondary &amp; Sen. Secondary</h3>
+                        <h3 class="insti-name col s12 m11">Sunbeam Group of Institutes</h3>
+                        <h3 class="place col s12 m11">Varanasi<br>India</h3>
+                        <h3 class="years col s12 m11">April 1998 - March 2013</h3>
+                    </div>
+                </div>
             </section>
             <section class="projects" data-menu-name="projects">
                 <h1 class="bg-header col s12">Projects</h1>
@@ -101,6 +116,7 @@
                     $('section.landing section h1.bg-header').css('color','rgba(255,255,255,0.06)').fadeIn(300);
                     $('section.landing section h1.header').css('color',color_light).fadeIn(300);
                     $('section.about p.about-content').css('color',color_light).fadeIn(300);
+                    $('section.education .content h3').css('color',color_light).fadeIn(300);
                 }
                 else{
                     $('.mask').css('backgroundColor','rgba(255,255,255,1)').fadeIn(300);
@@ -109,6 +125,7 @@
                     $('section.landing section h1.bg-header').css('color','rgba(0,0,0,0.2)').fadeIn(300);
                     $('section.landing section h1.header').css('color',color_dark).fadeIn(300);
                     $('section.about p.about-content').css('color',color_dark).fadeIn(300);
+                    $('section.education .content h3').css('color',color_dark).fadeIn(300);
                 }
             });
         });

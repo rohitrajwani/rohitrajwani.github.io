@@ -158,3 +158,55 @@ section.about p.about-content{
     font-family: "Raleway" ,sans-serif;
     font-weight: 500;
 }
+
+section.education .content{
+    position: absolute;
+    top: 200px;
+}
+
+section.education .content h3{
+    color: rgba(255,255,255,0.85);
+}
+
+section.education .content h3.programme{
+    font-size: 28px;
+    margin: 0px;
+    letter-spacing: 6.75px;
+}
+
+section.education .content h3.programme-school{
+    font-size: 28px;
+    margin: 0px;
+    letter-spacing: 3px;
+}
+
+section.education .content h3.discipline{
+    font-size: 22px;
+    margin-top: 5px;
+    letter-spacing: 3px;
+    word-spacing: 4px;
+}
+
+section.education .content h3.insti-name{
+    font-size: 18px;
+    letter-spacing: 3px;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+section.education .content h3.place{
+    font-size: 20px;
+    letter-spacing: 3px;
+    line-height: 1.5;
+    margin-top: -15px;
+    font-family: "Raleway" ,sans-serif;
+    font-weight: 300;
+}
+
+section.education .content h3.years{
+    font-size: 30px;
+    letter-spacing: 2px;
+    line-height: 1.5;
+    margin-top: 0px;
+    font-family: "Raleway" ,sans-serif;
+}
