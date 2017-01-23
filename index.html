@@ -20,7 +20,7 @@
     
     <section class="landing row">
         <div class="mask" id="mask">
-            <div class="logo col s12"><img class="clogo" src="img/logo.png"><h6 class="menu" data-menu-name="about">About</h6></div>
+            <div class="logo col s12"><img class="clogo" src="img/logo.png"><h6 class="menu col s2 offset-s5" data-menu-name="about">About</h6></div>
             <h6 class="menu projects col s2" data-menu-name="projects">Projects</h6>
             <h6 class="menu skills col s2" data-menu-name="skills">Skills</h6>
             <h6 class="menu education col" data-menu-name="education">Education</h6>
@@ -134,6 +134,16 @@
     
         $(function(){
             var click_count = 0;
+            
+            $('.clogo').on('click',function(){
+                click_count += 1;
+                $('section.landing').find('div.mask section.active').fadeOut(100).removeClass('active');
+                $('.intro').fadeIn(500);
+                $('.mask').css('backgroundColor','rgba(0,0,0,0.89)').fadeIn(300);
+                $('.menu').css('color','white').fadeIn(300);
+                $('.clogo').attr('src','img/logo.png').fadeIn(300);
+            });
+            
             $('.menu').on('click',function(){
                 var menu_item = $(this).attr('data-menu-name');
                 click_count += 1;
@@ -145,7 +155,7 @@
                 $('section.landing').find('div.mask section.active').fadeOut(100).removeClass('active');
                 $('section.landing section.'+menu_item).addClass('active').fadeIn(300);
                 
-                if( (click_count % 2) == 1){
+                if( (click_count % 2) == 0){
                     $('.mask').css('backgroundColor','rgba(0,0,0,1)').fadeIn(300);
                     $('.menu').css('color','white').fadeIn(300);
                     $('.clogo').attr('src','img/logo.png').fadeIn(300);

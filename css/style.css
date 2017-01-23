@@ -34,9 +34,12 @@ section.landing .logo h6{
 }
 
 section.landing .logo img{
+    position: relative;
     height: 45px;
     display: block;
     margin: auto;
+    cursor: pointer;
+    z-index: 999;
 }
 
 section.landing h3.intro{
@@ -151,7 +154,7 @@ section.about p.about-content{
     position: absolute;
     top: 180px;
     color: rgba(255,255,255,0.85);
-    font-size: 22px;
+    font-size: 20px;
     line-height: 1.7;
     letter-spacing: 1.5px;
     word-spacing: 2px;
@@ -262,7 +265,7 @@ section.projects .content h3.genre{
     font-family: "Josefin Sans" ,sans-serif;
     letter-spacing: 2px;
     margin-top: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 section.projects .content .project-container .project{
