@@ -1,0 +1,203 @@
+body{
+    background-color: #f4f4f0;
+}
+
+.head{
+	margin: 0;
+	height: 93%;
+    width: auto;
+    background-color: chocolate;
+	background-image: url(../images/bkg-blu.jpg);
+	background-position: center;
+	background-attachment: fixed;
+    opacity: 0.7;
+}
+
+.headpic{
+    position: fixed;
+    height: auto;
+    width: 100%;
+    z-index: -999;
+}
+
+.head h3{
+    position: absolute;
+    top: 25%;
+    text-align: center;
+}
+
+.head h2{
+    font-size: 3em;
+    position: absolute;
+    top: 35%;
+    text-align: center;
+}
+
+.head .knowme{
+    font-size: 1.75em;
+    position: absolute;
+    top: 60%;
+    text-align: center;
+}
+
+.head h4{
+    font-size: 1.5em;
+    position: absolute;
+    top: 49%;
+    text-align: center;
+}
+
+.head .s12{
+    margin-top: -20px;
+}
+
+nav{
+    background-color: black;
+    opacity: 0.7;
+    height: 50px;
+}
+
+.right{
+    margin: auto;
+    float: none !important;
+    width: 50%;
+}
+
+.right li a{
+    line-height: 2.5;
+    height: 50px;
+    font-size: 1.2em;
+    font-weight: 300;
+    border-right: 1px solid grey;
+    border-left: 1px solid grey;
+}
+
+.right li a:hover{
+    background-color: darkslategrey;
+    color: white;
+    opacity: 1;
+    transition: 300ms;
+}
+
+.details{
+	height: auto;
+}
+
+.details h1{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 200;
+    text-align: center;
+	border-bottom: 1px groove lightgray;
+}
+
+.about{
+	align-content: center;
+}
+
+.about_head{
+	text-align: center;
+	font-size: 2.25em;
+	font-weight: 300;
+	border-bottom: 1px solid grey;
+}
+
+.about_desc{
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+.mypic{
+	margin-top: -50px;
+	height: 500;
+}
+
+#pic{
+	left: 0px;
+	height: 90%;
+	width: 60%;
+}
+
+.details{
+	margin-top: 50px;
+}
+
+.d_head{
+    text-align: center;
+    font-size: 1.75em;
+    font-weight: 300;
+}
+
+.underline{
+    border-bottom: 1px solid grey;
+    
+}
+
+.d_label{
+	text-align: center;
+	margin-top: 15px;
+	font-size: 1.2em;
+	font-weight: 600;
+}
+
+.d_text{
+	text-align: center;
+	margin-top: 14px;
+	font-size: 1.4em;
+	font-weight: 300;
+}
+
+.btn-fb{
+    background: #4862a3;
+}
+
+.btn-linkedin{
+    background: #0077B5;
+}
+
+.btn-twitter{
+    background: #00aced;
+}
+
+.edu h3{
+    font-size: 1.25em;
+    line-height: 1.2;
+    font-weight: 300;
+}
+
+h1{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-weight: 200;
+    text-align: center;
+	border-bottom: 1px groove lightgray;
+    color: #009999;
+}
+
+.abilities h3{
+    text-align: center;
+    line-height: 1.5;
+    font-size: 2em;
+    font-weight: 300;
+    border-bottom: 1px solid grey;
+}
+
+.skills,.tools{
+    line-height: 2;
+    height: 400px;
+}
+
+.skill_rating,.tool_rating{
+    letter-spacing: 5px;
+    text-align: right;
+}
+
+.footer{
+    bottom: 0;
+    height: 30px;
+    background-color: black;
+    opacity: 0.9;
+    color: white;
+    text-align: center;
+    font-size: 15px;
+}
