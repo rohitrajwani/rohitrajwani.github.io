@@ -1,0 +1,44 @@
+<!DOCYTPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>Rohit Rajwani</title>
+        
+		<link rel="stylesheet" type="text/css" href="fonts/vicons/vicons-font.css" />
+        
+        <!-- Custom CSS file-->
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    
+    <body>
+    
+        <div class="container">
+            <div class="box">
+                <div class="message" id="message"></div>
+            </div>
+            <div class="button">Click</div>
+            
+        </div>
+        <script src="js/jquery-2.1.4.min.js"></script>
+        <script src="js/typed.js"></script>
+		<script>
+			$(function() {
+				$('.button').on("click", function(){
+                    $('.button').css("display","none");
+                    $('.box').addClass("zoom");
+                    $('.message').css("display", "block");
+                    $("#message").typed({
+                        strings: ["<strong>Janmdin ki dher saari shubhkamnaye..!!<br>Janmdiwas ni khub subheccha..!!</strong><br>A very happy birthday to my 2020 foodie friend 😇😊 (all thanks you Shreya 😛, that pasta day was unexpected but exciting and fun 😅), jiski simple si 2 hobbies hai bas, khana aur sona😛 <br>May god give you all the reasons to be happy, keep smiling and remain stress free hamesha.<br>Chhota sa Thank you note to de chuke, fir se nhi de rhe... itne thank-you achhe nhi lgte hme 😅<br>Just an important note, now since we're in lockdown and I can't gift you anything. <br>So for now all I can gift you is a friend, who'll always be there for you and make sure that he tries his level best to keep you happy and stress-free, so that tumhara kabhi rone ka mann na kre 😇😅<br>Have a wonderful day, eat lots of food, chocolates and sweets... <br>It is going to be a busy day for you, aakhir itne saare fans hai tumhare, sab wish bhi toh karenge 😅😛<br><br>God Bless You, be Happy, Keep Smiling..!!<br><strong>Happy Birthday Again...!!</strong><br><br>😍😇😘😊🙃😀😃😄😁🤗😉🤠🥳🥳🍉🍉🍉🍉🍎🍎🍇🍇🍇🍇🍇🍟🍟🍟🍔🍔🍕🍕🍕🍰🎂🎂🍩🍫🍫🍫🍫🍪🍪🍪🍪"],
+                        typeSpeed: 30,
+                        startDelay: 3000,
+                        showCursor: false
+                    });
+                });
+			});
+        </script>
+    </body>
+    
+</html>
