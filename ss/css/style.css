@@ -60,3 +60,8 @@ body{
     letter-spacing: 0.25px;
     word-spacing: 1px;
 }
+
+.message strong {
+    
+    font-size: 4px;
+}
