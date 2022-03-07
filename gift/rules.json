@@ -5,11 +5,11 @@
     "gifts": [
       {
         "gift_name": "mug",
-        "image_src": "bg.PNG"
+        "image_src": "bg.png"
       },
       {
         "gift_name": "hand towel",
-        "image_src": "bg.PNG"
+        "image_src": "bg.png"
       }
     ]
   },
@@ -19,11 +19,11 @@
     "gifts": [
       {
         "gift_name": "handkerchief",
-        "image_src": "bg.PNG"
+        "image_src": "bg.png"
       },
       {
         "gift_name": "showpiece",
-        "image_src": "bg.PNG"
+        "image_src": "bg.png"
       }
     ]
   },
@@ -33,15 +33,15 @@
     "gifts": [
       {
         "gift_name": "bath towel",
-        "image_src": "bg.PNG"
+        "image_src": "bg.png"
       },
       {
         "gift_name": "bedsheet",
-        "image_src": "bg.PNG"
+        "image_src": "bg.png"
       },
       {
         "gift_name": "socks",
-        "image_src": "bg.PNG"
+        "image_src": "bg.png"
       }
     ]
   }
