@@ -1,0 +1,48 @@
+[
+  {
+    "start": 500,
+    "end": 1000,
+    "gifts": [
+      {
+        "gift_name": "mug",
+        "image_src": "bg.PNG"
+      },
+      {
+        "gift_name": "hand towel",
+        "image_src": "bg.PNG"
+      }
+    ]
+  },
+  {
+    "start": 1000,
+    "end": 2000,
+    "gifts": [
+      {
+        "gift_name": "handkerchief",
+        "image_src": "bg.PNG"
+      },
+      {
+        "gift_name": "showpiece",
+        "image_src": "bg.PNG"
+      }
+    ]
+  },
+  {
+    "start": 2000,
+    "end": 3000,
+    "gifts": [
+      {
+        "gift_name": "bath towel",
+        "image_src": "bg.PNG"
+      },
+      {
+        "gift_name": "bedsheet",
+        "image_src": "bg.PNG"
+      },
+      {
+        "gift_name": "socks",
+        "image_src": "bg.PNG"
+      }
+    ]
+  }
+]
