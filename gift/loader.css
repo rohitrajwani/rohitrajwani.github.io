@@ -81,15 +81,15 @@
 }
 @keyframes loading-text {
   0% {
-    content: "Finding a gift for you";
+    content: "Loading the Wheel of Gifts";
   }
   25% {
-    content: "..Finding a gift for you..";
+    content: "..Loading the Wheel of Gifts..";
   }
   50% {
-    content: "....Finding a gift for you....";
+    content: "....Loading the Wheel of Gifts....";
   }
   75% {
-    content: "......Finding a gift for you......";
+    content: "......Loading the Wheel of Gifts......";
   }
 }
