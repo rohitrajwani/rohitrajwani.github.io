@@ -2,47 +2,55 @@
   {
     "start": 500,
     "end": 1000,
-    "gifts": [
-      {
-        "gift_name": "mug",
-        "image_src": "bg.png"
-      },
-      {
-        "gift_name": "hand towel",
-        "image_src": "bg.png"
-      }
+    "gift_list": [
+       {"fillStyle" : "#ee1c24", "text" : "rumal"},
+       {"fillStyle" : "#3cb878", "text" : "socks"},
+       {"fillStyle" : "#f6989d", "text" : "towel"},
+       {"fillStyle" : "#00aef0", "text" : "750"},
+       {"fillStyle" : "#f26522", "text" : "500"},
+       {"fillStyle" : "#ffffff", "text" : "None", "textFontSize" : 16, "textFillStyle" : "#4fa3f7"},
+       {"fillStyle" : "#e70697", "text" : "3000"},
+       {"fillStyle" : "#fff200", "text" : "600"},
+       {"fillStyle" : "#f6989d", "text" : "700"},
+       {"fillStyle" : "#ee1c24", "text" : "350"},
+       {"fillStyle" : "#3cb878", "text" : "500"},
+       {"fillStyle" : "#f26522", "text" : "800"}
     ]
   },
   {
     "start": 1000,
     "end": 2000,
-    "gifts": [
-      {
-        "gift_name": "handkerchief",
-        "image_src": "bg.png"
-      },
-      {
-        "gift_name": "showpiece",
-        "image_src": "bg.png"
-      }
+    "gift_list": [
+       {"fillStyle" : "#ee1c24", "text" : "rumal"},
+       {"fillStyle" : "#3cb878", "text" : "socks"},
+       {"fillStyle" : "#f6989d", "text" : "towel"},
+       {"fillStyle" : "#00aef0", "text" : "750"},
+       {"fillStyle" : "#f26522", "text" : "500"},
+       {"fillStyle" : "#ffffff", "text" : "None", "textFontSize" : 16, "textFillStyle" : "#4fa3f7"},
+       {"fillStyle" : "#e70697", "text" : "3000"},
+       {"fillStyle" : "#fff200", "text" : "600"},
+       {"fillStyle" : "#f6989d", "text" : "700"},
+       {"fillStyle" : "#ee1c24", "text" : "350"},
+       {"fillStyle" : "#3cb878", "text" : "500"},
+       {"fillStyle" : "#f26522", "text" : "800"}
     ]
   },
   {
     "start": 2000,
     "end": 3000,
-    "gifts": [
-      {
-        "gift_name": "bath towel",
-        "image_src": "bg.png"
-      },
-      {
-        "gift_name": "bedsheet",
-        "image_src": "bg.png"
-      },
-      {
-        "gift_name": "socks",
-        "image_src": "bg.png"
-      }
+    "gift_list": [
+       {"fillStyle" : "#ee1c24", "text" : "rumal"},
+       {"fillStyle" : "#3cb878", "text" : "socks"},
+       {"fillStyle" : "#f6989d", "text" : "towel"},
+       {"fillStyle" : "#00aef0", "text" : "750"},
+       {"fillStyle" : "#f26522", "text" : "500"},
+       {"fillStyle" : "#ffffff", "text" : "None", "textFontSize" : 16, "textFillStyle" : "#4fa3f7"},
+       {"fillStyle" : "#e70697", "text" : "3000"},
+       {"fillStyle" : "#fff200", "text" : "600"},
+       {"fillStyle" : "#f6989d", "text" : "700"},
+       {"fillStyle" : "#ee1c24", "text" : "350"},
+       {"fillStyle" : "#3cb878", "text" : "500"},
+       {"fillStyle" : "#f26522", "text" : "800"}
     ]
   }
 ]

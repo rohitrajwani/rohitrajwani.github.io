@@ -2,6 +2,7 @@
 
 <head>  
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Cache-Control" content="no-store" />
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,16 +53,6 @@
                 </div>
 
                 <div id="gift" class="col s12" style="display: none;">
-<!--
-                    <div style="padding: 5px;margin-top: 25px; text-align: center;" class="card col l4 offset-l4 s12">
-                        <div class="card-image">
-                          <img id="gift-image" src="https://rukminim1.flixcart.com/image/832/832/ky0g58w0/handkerchief/c/i/t/white-handkerchief-pack-of-3-3-hk01-hk01-jockey-original-imagacfwkfgfgbwn.jpeg?q=70">
-                        </div>
-                        <div class="card-action">
-                          <h6 id="gift-text">Jockey Handkerchief</h6>
-                        </div>
-                    </div>
--->
                     <h5 class="col s12" id="gift_text"></h5>
                     <h5 class="col s12">Thank You for Shopping with us..!!</h5>
                 </div>
@@ -74,26 +65,67 @@
     <script type="text/javascript" src="rules.json"></script>
 
     <script>
-        function random(min, max) { // min and max included 
-            return Math.floor(Math.random() * (max - min + 1) + min)
-        }
-
+        
+        let theWheel;
+        let audio = new Audio('tick.mp3');
+        let wheelPower    = 2;
+        let wheelSpinning = false;
+        
         var offers;
-        $.getJSON("rules.json", (data) => offers = data);
+        $.getJSON("rules.json", (data) => {
+            offers = data; 
+        });
+        
+        let wheelConfig = {
+            'outerRadius'     : 150,        // Set outer radius so wheel fits inside the background.
+            'innerRadius'     : 50,         // Make wheel hollow so segments don't go all way to center.
+            'textFontSize'    : 20,         // Set default font size for the segments.
+            'textOrientation' : 'horizontal', // Make text vertial so goes down from the outside of wheel.
+            'textAlignment'   : 'outer',    // Align text to outside of wheel.
+            'numSegments'     : 12,         // Specify number of segments.
+            'responsive'      : true,
+            'segments'        :             // Define segments including colour and text.
+            [                               // font size and test colour overridden on backrupt segments.
+               {'fillStyle' : '#ee1c24', 'text' : '300'},
+               {'fillStyle' : '#3cb878', 'text' : '450'},
+               {'fillStyle' : '#f6989d', 'text' : '600'},
+               {'fillStyle' : '#00aef0', 'text' : '750'},
+               {'fillStyle' : '#f26522', 'text' : '500'},
+               {'fillStyle' : '#ffffff', 'text' : 'None', 'textFontSize' : 16, 'textFillStyle' : '#4fa3f7'},
+               {'fillStyle' : '#e70697', 'text' : '3000'},
+               {'fillStyle' : '#fff200', 'text' : '600'},
+               {'fillStyle' : '#f6989d', 'text' : '700'},
+               {'fillStyle' : '#ee1c24', 'text' : '350'},
+               {'fillStyle' : '#3cb878', 'text' : '500'},
+               {'fillStyle' : '#f26522', 'text' : '800'}
+            ],
+            'animation' :           // Specify the animation to use.
+            {
+                'type'     : 'spinToStop',
+                'duration' : 10,    // Duration in seconds.
+                'spins'    : 3,     // Default number of complete spins.
+                'callbackFinished' : alertPrize,
+                'callbackSound'    : playSound,   // Function to call when the tick sound is to be triggered.
+                'soundTrigger'     : 'pin'        // Specify pins are to trigger the sound, the other option is 'segment'.
+            },
+            'pins' :				// Turn pins on.
+            {
+                'number'     : 12,
+                'fillStyle'  : 'silver',
+                'outerRadius': 4,
+                'responsive' : true,
+            }
+        };
         
         function sleep(ms) {
             return new Promise(resolve => setTimeout(resolve, ms));
         }
 
         function findGift() {
-            
             $("button").prop("disabled", true);
             
-            $("#gift").hide();
-            $("#wheel").hide();
-            
             var billAmount = $("#billAmount").val();
-            
+        
             if (billAmount == undefined || billAmount == "" || billAmount == 0) {
                 $("#error").fadeIn(100);
                 
@@ -104,11 +136,11 @@
                 return;
             }
 
+            console.log(offers);
             for (offer of offers) {
                 if (billAmount >= offer.start && billAmount < offer.end) {
-                    gift = offer.gifts[random(0, offer.gifts.length - 1)];
-                    $("#gift-image").attr("src",gift.image_src);
-                    $("#gift-text").text(gift.gift_name);
+                    wheelConfig.segments = offer.gift_list;
+                    theWheel = new Winwheel(wheelConfig);
                     break;
                 }
             }
@@ -119,100 +151,46 @@
                 $("#loader").fadeOut(500);
                 setTimeout(() => $("#wheel").fadeIn(1000), 500);
             },4000);
-            
-            
+        }
+
+        // This function is called when the sound is to be played.
+        function playSound()
+        {
+            // Stop and rewind the sound if it already happens to be playing.
+            audio.pause();
+            audio.currentTime = 0;
+
+            // Play the sound.
+            audio.play();
+        }
+
+        // -------------------------------------------------------
+        // Click handler for spin button.
+        // -------------------------------------------------------
+        function startSpin()
+        {
+            // Ensure that spinning can't be clicked again while already running.
+            if (wheelSpinning == false) {
+                theWheel.animation.spins = 6;
+
+                // Begin the spin animation by calling startAnimation on the wheel object.
+                theWheel.startAnimation();
+
+                // Set to true so that power can't be changed and spin button re-enabled during
+                // the current animation. The user will have to reset before spinning again.
+                wheelSpinning = true;
+            }
+        }
+
+        // -------------------------------------------------------
+        // Called when the spin animation has finished by the callback feature of the wheel because I specified callback in the parameters.
+        // -------------------------------------------------------
+        function alertPrize(indicatedSegment)
+        {
+            $("#gift_text").text("Congrats..!! You have won " + indicatedSegment.text);
+            $("#gift").fadeIn(1000);
         }
     </script>
-    
-    <script>
-            // Create new wheel object specifying the parameters at creation time.
-            let theWheel = new Winwheel({
-                'outerRadius'     : 150,        // Set outer radius so wheel fits inside the background.
-                'innerRadius'     : 50,         // Make wheel hollow so segments don't go all way to center.
-                'textFontSize'    : 20,         // Set default font size for the segments.
-                'textOrientation' : 'horizontal', // Make text vertial so goes down from the outside of wheel.
-                'textAlignment'   : 'outer',    // Align text to outside of wheel.
-                'numSegments'     : 12,         // Specify number of segments.
-                'responsive'      : true,
-                'segments'        :             // Define segments including colour and text.
-                [                               // font size and test colour overridden on backrupt segments.
-                   {'fillStyle' : '#ee1c24', 'text' : '300'},
-                   {'fillStyle' : '#3cb878', 'text' : '450'},
-                   {'fillStyle' : '#f6989d', 'text' : '600'},
-                   {'fillStyle' : '#00aef0', 'text' : '750'},
-                   {'fillStyle' : '#f26522', 'text' : '500'},
-                   {'fillStyle' : '#ffffff', 'text' : 'None', 'textFontSize' : 16, 'textFillStyle' : '#4fa3f7'},
-                   {'fillStyle' : '#e70697', 'text' : '3000'},
-                   {'fillStyle' : '#fff200', 'text' : '600'},
-                   {'fillStyle' : '#f6989d', 'text' : '700'},
-                   {'fillStyle' : '#ee1c24', 'text' : '350'},
-                   {'fillStyle' : '#3cb878', 'text' : '500'},
-                   {'fillStyle' : '#f26522', 'text' : '800'}
-                ],
-                'animation' :           // Specify the animation to use.
-                {
-                    'type'     : 'spinToStop',
-                    'duration' : 10,    // Duration in seconds.
-                    'spins'    : 3,     // Default number of complete spins.
-                    'callbackFinished' : alertPrize,
-                    'callbackSound'    : playSound,   // Function to call when the tick sound is to be triggered.
-                    'soundTrigger'     : 'pin'        // Specify pins are to trigger the sound, the other option is 'segment'.
-                },
-                'pins' :				// Turn pins on.
-                {
-                    'number'     : 12,
-                    'fillStyle'  : 'silver',
-                    'outerRadius': 4,
-                    'responsive' : true,
-                }
-            });
-
-            // Loads the tick audio sound in to an audio object.
-            let audio = new Audio('tick.mp3');
-
-            // This function is called when the sound is to be played.
-            function playSound()
-            {
-                // Stop and rewind the sound if it already happens to be playing.
-                audio.pause();
-                audio.currentTime = 0;
-
-                // Play the sound.
-                audio.play();
-            }
-
-            // Vars used by the code in this page to do power controls.
-            let wheelPower    = 2;
-            let wheelSpinning = false;
-
-            // -------------------------------------------------------
-            // Click handler for spin button.
-            // -------------------------------------------------------
-            function startSpin()
-            {
-                // Ensure that spinning can't be clicked again while already running.
-                if (wheelSpinning == false) {
-                    theWheel.animation.spins = 6;
-
-                    // Begin the spin animation by calling startAnimation on the wheel object.
-                    theWheel.startAnimation();
-
-                    // Set to true so that power can't be changed and spin button re-enabled during
-                    // the current animation. The user will have to reset before spinning again.
-                    wheelSpinning = true;
-                }
-            }
-
-            // -------------------------------------------------------
-            // Called when the spin animation has finished by the callback feature of the wheel because I specified callback in the parameters.
-            // -------------------------------------------------------
-            function alertPrize(indicatedSegment)
-            {
-                $("#gift_text").text("Congrats..!! You have won " + indicatedSegment.text);
-                $("#gift").fadeIn(1000);
-                
-            }
-        </script>
 </body>
 
 </html>
