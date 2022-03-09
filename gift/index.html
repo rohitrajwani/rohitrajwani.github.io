@@ -136,11 +136,13 @@
             var billAmount = $("#billAmount").val();
         
             if (billAmount == undefined || billAmount == "" || billAmount == 0) {
-                showError("Please Enter Bill Amount...")
+                showError("Please Enter Bill Amount...");
+                $("button").prop("disabled", false);
                 return;
             }
             else if (billAmount < 500) {
-                showError("Please Shop for minimum of Rs.500 !!")
+                showError("Please Shop for minimum of Rs.500 !!");
+                $("button").prop("disabled", false);
                 return;
             }
 
