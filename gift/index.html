@@ -26,7 +26,7 @@
             <div class="col l6 offset-l3 m12 s12">
                 <input style="font-size: 30px" class="col s12" id="billAmount">
                 <button style="margin-top: 15px" class="col l6 offset-l3 m8 offset-m2 s12" onclick="findGift()">Find Gift</button>
-                <p id="error" class="col s12" style="display: none; color: firebrick">Please enter bill amount.</p>
+                <h6 id="error" class="col s12" style="display: none; color: firebrick">Please enter bill amount.</h6>
             </div>
             
             <div class="gift-container col s12">
@@ -120,6 +120,15 @@
         function sleep(ms) {
             return new Promise(resolve => setTimeout(resolve, ms));
         }
+        
+        function showError(message) {
+            $("#error").text(message);
+            $("#error").fadeIn(100);
+                
+            setTimeout(() => {
+                $("#error").fadeOut(100);
+            }, 4000);
+        }
 
         function findGift() {
             $("button").prop("disabled", true);
@@ -127,12 +136,11 @@
             var billAmount = $("#billAmount").val();
         
             if (billAmount == undefined || billAmount == "" || billAmount == 0) {
-                $("#error").fadeIn(100);
-                
-                setTimeout(() => {
-                    $("#error").fadeOut(100);
-                }, 4000);
-                
+                showError("Please Enter Bill Amount...")
+                return;
+            }
+            else if (billAmount < 500) {
+                showError("Please Shop for minimum of Rs.500 !!")
                 return;
             }
 
