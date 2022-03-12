@@ -17,15 +17,21 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
 </head>
 
 <body>
     <div class="container row z-depth-3">
         <div class="col l12 s12">
-            <h4 class="col s12">Please enter Bill Amount below</h4>
+            <h4 id="heading" class="col s12">Please enter details below</h4>
             <div class="col l6 offset-l3 m12 s12">
-                <input style="font-size: 30px" class="col s12" id="billAmount">
-                <button style="margin-top: 15px" class="col l6 offset-l3 m8 offset-m2 s12" onclick="findGift()">Find Gift</button>
+                <form id="custDetails" class="col s12" onsubmit="event.preventDefault();">
+                    <input class="col s12" name="entry.1492286040" id="mobile" placeholder="Mobile Number" required>
+                    <input class="col s12" name="entry.1085010822" id="custName" placeholder="Name">
+                    <input class="col s12" name="entry.1815167914" id="billNo" placeholder="Bill Number">
+                    <input class="col s12" name="entry.2110714193" id="billAmount" placeholder="Bill Amount" required>
+                    <input class="button col s12" type="submit" value="Submit" onClick="findGift()">
+                </form>
                 <h6 id="error" class="col s12" style="display: none; color: firebrick">Please enter bill amount.</h6>
             </div>
             
@@ -129,9 +135,34 @@
                 $("#error").fadeOut(100);
             }, 4000);
         }
+        
+        function submitForm() {
+            
+            console.log("called");
+            
+            $("#custDetails").submit(function(e) {
+
+                e.preventDefault(); // avoid to execute the actual submit of the form.
+
+                var form = $(this);
+                var actionUrl = "https://docs.google.com/forms/u/3/d/e/1FAIpQLSeiWfAQaCEIMq-i4jSjpGAtcaRvO44BF_iov3DOI0p4rbqEWA/formResponse?embedded=true";
+
+                $.ajax({
+                    type: "POST",
+                    url: actionUrl,
+                    data: form.serialize(), // serializes the form's elements.
+                    success: function(data)
+                    {
+                        console.log("success");
+                      console.log(data); // show response from the php script.
+                    }
+                });
+
+            });
+            
+        }
 
         function findGift() {
-            $("button").prop("disabled", true);
             
             var billAmount = $("#billAmount").val();
         
@@ -145,6 +176,11 @@
                 $("button").prop("disabled", false);
                 return;
             }
+            
+            submitForm();
+            
+            $("#custDetails").fadeOut(300);
+            $("#heading").fadeOut(500).text("Tap on the Wheel to spin").fadeIn(500);
 
             console.log(offers);
             for (offer of offers) {
